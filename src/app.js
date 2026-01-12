@@ -1,9 +1,12 @@
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
+import helmet from "helmet";
 import { router as apiRoutes } from "./routes/index.js";
 
 export const app = express();
+
+app.use(helmet());
 
 const corsOptions = {
   origin: [
